@@ -12,13 +12,6 @@ import reviewsRouter from './routes/reviews.js';
 import multer from 'multer';
 
 const app = express();
-const url="mongodb+srv://huzaifa:123@cluster0.rofjhvt.mongodb.net/?retryWrites=true&w=majority"
-
-mongoose.connect(url , {useNewUrlParser: true , useUnifiedTopology: true } )
-.then(()=>console.log("connected to db"))
-.catch(()=>console.log("not connected"));
-
-
 app.use(cors(
   {
     origin :["https://deploy-frontend-eight.vercel.app"],
@@ -26,6 +19,14 @@ app.use(cors(
     credentials: true
   }
 ));
+const url="mongodb+srv://huzaifa:123@cluster0.rofjhvt.mongodb.net/?retryWrites=true&w=majority"
+
+mongoose.connect(url , {useNewUrlParser: true , useUnifiedTopology: true } )
+.then(()=>console.log("connected to db"))
+.catch(()=>console.log("not connected"));
+
+
+
 app.use(bodyParser.json( { extends:true } ) );
 app.use(bodyParser.urlencoded({extends:true }));
 app.use("/shoes",shoes);
