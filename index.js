@@ -12,14 +12,14 @@ import reviewsRouter from './routes/reviews.js';
 import multer from 'multer';
 
 const app = express();
-// app.use(cors(
-//   {
-//     origin :["https://deploy-frontend-eight.vercel.app"],
-//              methods: ["POST", "GET"],
-//     credentials: true
-//   }
-// ));
-app.use(cors({ origin: 'https://deploy-frontend-eight.vercel.app' }));
+app.use(cors(
+  {
+    origin :["https://deploy-frontend-eight.vercel.app"],
+             methods: ["POST", "GET"],
+    credentials: true
+  }
+));
+// app.use(cors({ origin: 'https://deploy-frontend-eight.vercel.app' }));
 
 const url="mongodb+srv://huzaifa:123@cluster0.rofjhvt.mongodb.net/?retryWrites=true&w=majority"
 
