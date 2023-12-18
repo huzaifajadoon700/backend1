@@ -49,6 +49,13 @@ app.use("/reviews", reviewsRouter);
 app.use('/uploads', express.static('uploads'));
 
 
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something went wrong!');
+});
+
+
 //update apiiii
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
