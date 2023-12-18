@@ -102,8 +102,10 @@ app.put('/update/:productId', upload.single('productImage'), async (req, res) =>
 });
 //update endsss
 
-app.listen("https://backend1-api.vercel.app", () => {
-  console.log("Server is running on port 8000");
+// ... (import statements)
+
+app.listen(8000, () => {
+  console.log('Server is running on port 8000');
 });
 
 
